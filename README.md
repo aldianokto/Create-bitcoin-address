@@ -1,6 +1,4 @@
 Create a new JavaScript file in your project directory, for example index.js . Then, copy the code below into this file:
-        console.log(`| Public Address | ${address} |`)
-        console.log(`| Private Key | ${privateKey} |`)
 
         const wallet = {
             address: address,
