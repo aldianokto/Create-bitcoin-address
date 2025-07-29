@@ -1,22 +1,4 @@
 Create a new JavaScript file in your project directory, for example index.js . Then, copy the code below into this file:
-
-const bitcoin = require('bitcoinjs-lib');
-const ECPairFactory = require('ecpair').default;
-const ecc = require('tiny-secp256k1');
-const fs = require('fs');
-
-const ECPair = ECPairFactory(ecc);
-const network = bitcoin.networks.testnet; // Otherwise, bitcoin = mainnet and regnet = local
-
-async function createP2PKHwallet() {
-    try {
-        const keyPair = ECPair.makeRandom({ network: network });
-        const { address } = bitcoin.payments.p2pkh({
-          pubkey: keyPair.publicKey,
-          network: network,
-        });
-        const privateKey = keyPair.toWIF()
-
         console.log(`| Public Address | ${address} |`)
         console.log(`| Private Key | ${privateKey} |`)
 
